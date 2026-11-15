@@ -1,0 +1,29 @@
+[project]
+name = "orvion-api"
+version = "0.1.0"
+description = "API para el sistema Orvion: datos satelitales para la agricultura"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic-settings>=2.6.0",
+    "httpx>=0.27.0",
+    "python-dotenv>=1.0.1",
+    "earthaccess>=0.10.0",
+    "xarray>=2024.1.0",
+    "netCDF4>=1.6.5",
+    "h5netcdf>=1.3.0",
+    "h5py>=3.10.0",
+    "dask[array]>=2024.1.0",
+    "numpy>=2.5.4",
+    "pyhdf>=0.11.7",
+    "pyproj>=3.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

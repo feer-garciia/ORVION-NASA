@@ -1,0 +1,41 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # --- BACKEND (Python + FastAPI) ---
+  api:
+    build:
+      context: ./orvion-api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./orvion-api/.env
+    networks:
+      - orvion-net
+
+  # --- FRONTEND (React + Vite PWA) ---
+  web:
+    build:
+      context: ./orvion-pwa
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      # React usa esta URL desde el navegador, por eso es localhost
+      - VITE_API_URL=https://glorious-space-happiness-gprq7vvpgxpcp9q5-8000.app.github.dev
+    volumes:
+      # Magia para Hot-Reload: Sincroniza tu carpeta src local con el contenedor
+      - ./orvion-pwa/src:/app/src
+      # TRUCO SENIOR: Evita que Docker sobreescriba los node_modules del contenedor 
+      # con los de tu máquina local (que podrían no ser compatibles).
+      - /app/node_modules
+    depends_on:
+      - api
+    networks:
+      - orvion-net
+    restart: unless-stopped
+
+networks:
+  orvion-net:
+    driver: bridge

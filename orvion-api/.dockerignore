@@ -1,0 +1,38 @@
+# --- Entornos virtuales y cachés de Python ---
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# --- Archivos de configuración local y secretos (¡CRÍTICO!) ---
+.env
+.env.*
+*.pem
+*.key
+
+# --- Control de versiones y archivos del sistema ---
+.git/
+.gitignore
+.gitattributes
+.DS_Store
+
+# --- Archivos de desarrollo y pruebas ---
+tests/
+coverage/
+htmlcov/
+.coverage
+*.log
+
+# --- Archivos de Docker y documentación (no se necesitan dentro de la imagen) ---
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+
+# --- Datos locales y bases de datos de desarrollo ---
+*.db
+*.sqlite3
+data/
