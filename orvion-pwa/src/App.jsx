@@ -323,7 +323,7 @@ function App() {
             )}
 
             <div style={{ marginTop: '5px' }}>
-              <label style={{ fontSize: '12px', color: '#555', display: 'block', marginBottom: '5px' }}>Subir datos del Dron (JSON): </label>
+              <label style={{ fontSize: '12px', color: '#555', display: 'block', marginBottom: '5px' }}>Subir datos del Dron (formato JSON): </label>
               <input type="file" accept=".json" onChange={handleDroneUpload} style={{ fontSize: '12px' }} />
             </div>
           </div>
