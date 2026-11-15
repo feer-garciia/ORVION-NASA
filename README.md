@@ -1,5 +1,7 @@
 # 🌱 Orvion - Agricultura Inteligente
 
+![Orvion Dashboard](/orvion-pwa/src/assets/captura-dashboard.png)
+
 Orvion es una plataforma de agricultura de precisión que fusiona datos satelitales de la NASA con telemetría local (drones) para evaluar la aptitud del terreno, predecir sequías/inundaciones y recomendar el mejor cultivo a sembrar.
 
 ## 🏗️ Arquitectura del Proyecto
